@@ -17,7 +17,7 @@
 
 - 📫  How to reach me **daniel@sebesta.eu.org**
 
-- ⚡  **Fun fact:** I have two cats <img src="https://i.imgur.com/1wuAM9J.png" style="margin: -0.4rem 0 !important; width:1.5rem; pointer-events: none;"> 
+- ⚡  **Fun fact:** I have two cats 🐱
 
 ## <img src="https://i.imgur.com/4mpwsAy.png" style="margin: -0.5rem 0 !important; width:2rem; pointer-events: none;" width="25px"> Languages and Tools:
 
