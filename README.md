@@ -11,7 +11,7 @@
 
 - 🌱 I’m currently learning **PHP and JS**
 
-- 🎉  **2021 Goals:** Make website and rebrand for local bussiness
+- 🎉  **2022 Goals:** Make website and rebrand for local bussiness
 
 - 👨‍💻  All of my projects are available at **[My Website](https://sebesta.eu.org)**
 
