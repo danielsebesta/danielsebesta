@@ -19,5 +19,7 @@
 
 - ⚡  **Fun fact:** I have two cats 🐱
 
+<!--START_SECTION:activity-->
+
 ![Metrics](https://metrics.lecoq.io/danielsebesta?template=classic&config.timezone=Europe%2FPrague)
 
