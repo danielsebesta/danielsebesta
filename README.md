@@ -20,6 +20,12 @@
 - ⚡  **Fun fact:** I have two cats 🐱
 
 <!--START_SECTION:activity-->
+1. ❌ Closed PR [#11](https://github.com/danielsebesta/Owncord/pull/11) in [danielsebesta/Owncord](https://github.com/danielsebesta/Owncord)
+2. 💪 Opened PR [#11](https://github.com/danielsebesta/Owncord/pull/11) in [danielsebesta/Owncord](https://github.com/danielsebesta/Owncord)
+3. ❗️ Closed issue [#9](https://github.com/danielsebesta/Owncord/issues/9) in [danielsebesta/Owncord](https://github.com/danielsebesta/Owncord)
+4. 🗣 Commented on [#9](https://github.com/danielsebesta/Owncord/issues/9) in [danielsebesta/Owncord](https://github.com/danielsebesta/Owncord)
+5. 🎉 Merged PR [#6](https://github.com/danielsebesta/Owncord/pull/6) in [danielsebesta/Owncord](https://github.com/danielsebesta/Owncord)
+<!--END_SECTION:activity-->
 
 ![Metrics](https://metrics.lecoq.io/danielsebesta?template=classic&config.timezone=Europe%2FPrague)
 
