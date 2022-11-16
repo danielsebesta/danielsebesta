@@ -8,11 +8,14 @@
             }
 
             @keyframes mymove {
-                from {
+                0% {
                     color: red;
                 }
-                to {
+                50% {
                     color: yellow;
+                }
+                100% {
+                    color: red;
                 }
             }
             </style>
