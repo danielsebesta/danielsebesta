@@ -1,1 +1,1 @@
-<img src="https://svgshare.com/i/oCV.svg">
+<img src="example.svg">
