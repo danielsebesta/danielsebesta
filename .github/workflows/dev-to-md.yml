@@ -1,0 +1,15 @@
+name: Convert DEV Posts to Markdown
+on:
+ schedule:
+     # At midnight twice a week on Monday and Fridayday
+    - cron:  '0 0 * * 1,5'
+jobs:
+  dev-to-md:
+    runs-on: ubuntu-latest
+    steps:
+    - name: dev-to-md
+      uses: coderganesh/Dev.to-md@master
+    env:
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      DEV_API_KEY: "${{ secrets.DEV_API_KEY }}"
+      NUM_OF_POSTS: "${{ secrets.NUM_OF_POSTS }}"
