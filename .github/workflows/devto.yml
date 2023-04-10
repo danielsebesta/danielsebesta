@@ -1,46 +1,17 @@
-name: Daily updates
-
+name: Latest Medium story workflow
 on:
-  workflow_dispatch:
   schedule:
-    # Once a day at 8 AM
-    - cron: 0 8 * * *
-  push:
-    branches:
-      - main
+    # Runs every hour
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
 jobs:
-  updates:
-    name: Updates
+  update-readme-with-blog:
+    name: Update this repo's README with latest Medium post
     runs-on: ubuntu-latest
     steps:
-      - name: Update this repo's README
-        uses: JasonEtco/rss-to-readme@v1
+      - uses: actions/checkout@v2
+      - uses: gautamkrishnar/blog-post-workflow@master
         with:
-          feed-url: https://jasonet.co/rss.xml
-          readme-section: posts
-          empty-commits: "false"
-
-      - name: Update my status
-        uses: actions/github-script@v2
-        with:
-          github-token: ${{ secrets.GH_PAT }}
-          script: |
-            const query = `mutation changeUserStatus ($input: ChangeUserStatusInput!) {
-              changeUserStatus (input: $input) {
-                status {
-                  emoji
-                  message
-                }
-              }
-            }`
-
-            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-            const dayIndex = (new Date()).getDay()
-
-            github.graphql(query, {
-              input: {
-                emoji: '👋',
-                message: `Hello, happy ${days[dayIndex]}!`
-              }
-            })
+          comment_tag_name: "MEDIUM-STORY-LIST"
+          feed_list: "https://medium.com/feed/@audhiaprilliant"
