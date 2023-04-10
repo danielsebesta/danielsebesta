@@ -3,7 +3,7 @@ name: Update Dev.to posts
 on:
   schedule:
     - cron: '0 0 * * *' # Runs every day at midnight
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
   update-readme:
@@ -13,11 +13,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Fetch RSS feed
         run: |
-          curl -o devto.xml https://dev.to/feed/your_username
+          curl -o devto.xml https://dev.to/feed/danielsebesta
       - name: Update README
         run: |
           POSTS=$(cat devto.xml | awk -F '[<>]' '/<link>(https:\/\/dev.to\/[^<]*)/{print $3}' | head -n 6 | tail -n 5 | sed 's/^/  - /')
           awk -v regex="<!--START_SECTION:devto-->(.|\\n)*<!--END_SECTION:devto-->" -v replacement="<!--START_SECTION:devto-->\n$POSTS\n<!--END_SECTION:devto-->" '{gsub(regex,replacement,$0);print}' README.md > temp.md && mv temp.md README.md
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          GITHUB_TOKEN: ${{ secrets.GH_KEY }}
