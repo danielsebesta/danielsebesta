@@ -1,24 +1,29 @@
 
 name: Update Dev.to posts in README
+
 on:
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: |
-        sudo apt-get update && sudo apt-get install -y rss2json
-        npm install -g markdown-link-extractor
-    - name: Fetch RSS feed
-      run: |
-        rss2json https://dev.to/feed/danielsebesta > posts.json
-    - name: Extract post titles and URLs
-      run: |
-        markdown-link-extractor -f posts.json -p "title,link" -n 5 -o links.md
-    - name: Update README
-      run: |
-        sed -i '/<!--START_SECTION:devto-->/, /<!--END_SECTION:devto-->/d' README.md
-        sed -i '/<!--START_SECTION:devto-->/ r links.md' README.md
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+         sudo apt-get update && sudo apt-get install -y rss2json
+         npm install -g markdown-link-extractor
+      - name: Fetch RSS feed
+        run: |
+         rss2json https://dev.to/feed/danielsebesta > posts.json
+      - name: Extract post titles and URLs
+        run: |
+         markdown-link-extractor -f posts.json -p "title,link" -n 5 -o links.md
+      - name: Update README
+        run: |
+         sed -i '/<!--START_SECTION:devto-->/, /<!--END_SECTION:devto-->/d' README.md
+         sed -i '/<!--START_SECTION:devto-->/ r links.md' README.md
