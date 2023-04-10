@@ -1,29 +1,20 @@
-
-name: Update Dev.to posts in README
+name: Update Readme with Latest Dev.to Posts
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: |
-         sudo apt-get update && sudo apt-get install -y rss2json
-         npm install -g markdown-link-extractor
-      - name: Fetch RSS feed
-        run: |
-         rss2json https://dev.to/feed/danielsebesta > posts.json
-      - name: Extract post titles and URLs
-        run: |
-         markdown-link-extractor -f posts.json -p "title,link" -n 5 -o links.md
-      - name: Update README
-        run: |
-         sed -i '/<!--START_SECTION:devto-->/, /<!--END_SECTION:devto-->/d' README.md
-         sed -i '/<!--START_SECTION:devto-->/ r links.md' README.md
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Get RSS feed
+      run: |
+        curl -s "https://dev.to/feed/${{ env.DEVTO_USERNAME }}" > devto.xml
+      
+    - name: Parse RSS feed and update readme
+      run: |
+        POSTS=$(cat devto.xml | grep -Eo '<link>(https://dev.to/[^<]*)' | cut -c7- | awk 'NR<6 {print}')
+        sed -i "s#<!--START_SECTION:devto-->.*<!--END_SECTION:devto-->#<!--START_SECTION:devto-->\n$POSTS\n<!--END_SECTION:devto-->#" README.md
