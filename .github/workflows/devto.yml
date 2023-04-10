@@ -1,21 +1,23 @@
-name: Update Readme with Latest Dev.to Posts
+name: Update Dev.to posts
 
 on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
   workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      
-    - name: Get RSS feed
-      run: |
-        curl -s "https://dev.to/feed/${{ env.DEVTO_USERNAME }}" > devto.xml
-      
-    - name: Parse RSS feed and update readme
-      run: |
-        POSTS=$(cat devto.xml | grep -Eo '<link>(https://dev.to/[^<]*)' | cut -c7- | awk 'NR<6 {print}')
-        sed -i "s%<!--START_SECTION:devto-->.*<!--END_SECTION:devto-->%<!--START_SECTION:devto-->\n$POSTS\n<!--END_SECTION:devto-->%" README.md
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Fetch RSS feed
+        run: |
+          curl -o devto.xml https://dev.to/feed/your_username
+      - name: Update README
+        run: |
+          POSTS=$(cat devto.xml | awk -F '[<>]' '/<link>(https:\/\/dev.to\/[^<]*)/{print $3}' | head -n 6 | tail -n 5 | sed 's/^/  - /')
+          awk -v regex="<!--START_SECTION:devto-->(.|\\n)*<!--END_SECTION:devto-->" -v replacement="<!--START_SECTION:devto-->\n$POSTS\n<!--END_SECTION:devto-->" '{gsub(regex,replacement,$0);print}' README.md > temp.md && mv temp.md README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
