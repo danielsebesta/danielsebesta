@@ -1,22 +1,16 @@
-name: Update Dev.to posts
+name: Update this repo's README
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight
-    workflow_dispatch:
+    # Once a day at 8 AM
+    - cron: 0 8 * * *
+  workflow_dispatch:
 
 jobs:
-  update-readme:
+  update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Fetch RSS feed
-        run: |
-          curl -o devto.xml https://dev.to/feed/danielsebesta
-      - name: Update README
-        run: |
-          POSTS=$(cat devto.xml | awk -F '[<>]' '/<link>(https:\/\/dev.to\/[^<]*)/{print $3}' | head -n 6 | tail -n 5 | sed 's/^/  - /')
-          awk -v regex="<!--START_SECTION:devto-->(.|\\n)*<!--END_SECTION:devto-->" -v replacement="<!--START_SECTION:devto-->\n$POSTS\n<!--END_SECTION:devto-->" '{gsub(regex,replacement,$0);print}' README.md > temp.md && mv temp.md README.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_KEY }}
+      - uses: JasonEtco/rss-to-readme@v1
+        with:
+          feed-url: https://dev.to/feed/danielsebesta
+          readme-section: feed
