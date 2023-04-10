@@ -17,4 +17,5 @@ jobs:
     - name: Parse RSS feed and update readme
       run: |
         POSTS=$(cat devto.xml | grep -Eo '<link>(https://dev.to/[^<]*)' | cut -c7- | awk 'NR<6 {print}')
-        sed -i "s#<!--START_SECTION:devto-->.*<!--END_SECTION:devto-->#<!--START_SECTION:devto-->\n$POSTS\n<!--END_SECTION:devto-->#" README.md
+        sed -i "s%<!--START_SECTION:devto-->.*<!--END_SECTION:devto-->%<!--START_SECTION:devto-->\n$POSTS\n<!--END_SECTION:devto-->%" README.md
+
