@@ -17,5 +17,6 @@ Other                        ░░░░░░░░░░░░░░░░░
 <!--END_SECTION:waka-->
 
 ## Latest posts from dev.to
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
+<!--START_SECTION:devto-->
+<!--END_SECTION:devto-->
+
