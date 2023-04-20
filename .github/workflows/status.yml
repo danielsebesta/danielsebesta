@@ -16,7 +16,7 @@ jobs:
         
       - name: Update Profile Status
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.STATUS_KEY }}
         run: |
           dayOfWeek="${{ steps.set-day.outputs.day }}"
           message="Have a nice $dayOfWeek!"
