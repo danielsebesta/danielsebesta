@@ -1,24 +1,22 @@
-name: Update GitHub Profile Status
+name: Update profile status
 
 on:
   schedule:
-    # Update the status every day at 8:00 AM UTC
-    - cron: '0 8 * * *'
+    - cron: '0 0 * * *' # Run every day at midnight
   workflow_dispatch:
 
 jobs:
-  update-profile-status:
+  update-status:
     runs-on: ubuntu-latest
     steps:
-      - name: Set Day of Week
-        id: set-day
-        run: echo "::set-output name=day::$(date +%A)"
-        
-      - name: Update Profile Status
-        env:
-          GITHUB_TOKEN: ${{ secrets.STATUS_KEY }}
-        run: |
-          dayOfWeek="${{ steps.set-day.outputs.day }}"
-          message="Have a nice $dayOfWeek!"
-          endpoint="https://api.github.com/user"
-          curl -X PATCH -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d "{\"status\": \"$message\"}" $endpoint
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set status
+      run: |
+        day=$(date +%A)
+        curl -X PATCH \
+          -H "Authorization: token ${{ secrets.STATUS_KEY }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/user \
+          -d "{\"status\":\"$day\"}"
