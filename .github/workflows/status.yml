@@ -1,0 +1,21 @@
+name: Update GitHub Profile Status
+
+on:
+  schedule:
+    # Update the status every day at 8:00 AM UTC
+    - cron: '0 8 * * *'
+
+jobs:
+  update-profile-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Day of Week
+        id: set-day
+        run: echo "::set-output name=day::$(date +%A)"
+        
+      - name: Set Profile Status
+        uses: peter-evans/create-or-update-profile-status@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          emoji: wave
+          message: "Have a nice ${{ steps.set-day.outputs.day }}!"
