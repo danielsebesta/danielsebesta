@@ -8,9 +8,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-Total Time: 0 secs
+Total Time: 52 mins
 
-No activity tracked
+PHP                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░   89.35 %
+HTML                   ▓▓░░░░░░░░░░░░░░░░░░░░░░░   08.80 %
+CSS                    ░░░░░░░░░░░░░░░░░░░░░░░░░   01.85 %
 ```
 
 <!--END_SECTION:waka-->
