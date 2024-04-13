@@ -8,10 +8,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-Total Time: 11 mins
+Total Time: 51 mins
 
-PHP                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░   84.28 %
-JavaScript                   ▓▓▓▓░░░░░░░░░░░░░░░░░░░░░   15.72 %
+Other                        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░   78.20 %
+PHP                          ▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░   18.37 %
+JavaScript                   ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.43 %
 ```
 
 <!--END_SECTION:waka-->
