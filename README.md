@@ -8,11 +8,9 @@
 <!--START_SECTION:waka-->
 
 ```txt
-Total Time: 2 hrs 28 mins
+Total Time: 1 hr 31 mins
 
-PHP                           ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░   97.94 %
-Image (svg)                   ░░░░░░░░░░░░░░░░░░░░░░░░░   01.21 %
-CSS                           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.85 %
+PHP                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   100.00 %
 ```
 
 <!--END_SECTION:waka-->
