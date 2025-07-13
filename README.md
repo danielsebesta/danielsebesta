@@ -1,14 +1,12 @@
-<div align="center">
-
-<picture>
-  <source width="750" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/danielsebesta/danielsebesta@main/dark-banner.webp">
-  <source width="750" media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/danielsebesta/danielsebesta@main/light-banner.webp">
-  <img alt="Daniel Šebesta - Webdev, student, scout..." width="750" src="https://cdn.jsdelivr.net/gh/danielsebesta/danielsebesta@main/light-banner.webp" width="750">
-</picture>
-  
+<div id="toc" align="center">
+  <ul style="list-style: none">
+    <summary>
+      <h1> Daniel Šebesta </h1><br>
+     <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=20&letterSpacing=&duration=2000&pause=700&color=B6D9FD&center=true&vCenter=true&width=435&lines=Webdev;Student;Scout" alt="Webdev, student, scout..." /></a>
+    </summary>
+  </ul>
 </div>
-<br><div align="center">
-  
+<div align="center">
   <a href="https://bsky.app/profile/dsebesta.cz">
     <img src="https://raw.githubusercontent.com/danielsebesta/danielsebesta/refs/heads/main/icon_bluesky.webp?a" alt="Bluesky" width="32" style="margin: 0 10px;"/></a>
   <a href="https://discordapp.com/users/215184211114590229">
@@ -28,7 +26,15 @@
   <a href="https://twitter.com/daniel_sebesta">
     <img src="https://raw.githubusercontent.com/danielsebesta/danielsebesta/refs/heads/main/icon_twitter.webp?a" alt="Twitter" width="32" style="margin: 0 10px;"/></a>
 
-
 </div>
 
 <hr>
+
+<div id="toc">
+  <ul style="list-style: none">
+    <summary>
+      <h2> Tools and Languages I use almost every day </h2>
+    </summary>
+  </ul>
+</div>
+<p>gslgůlsldgůlsdůgds</p>
