@@ -2,7 +2,7 @@
   <ul style="list-style: none">
     <summary>
       <h1> Daniel Šebesta </h1><br>
-     <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=20&letterSpacing=&duration=2000&pause=700&color=B6D9FD&center=true&vCenter=true&width=435&lines=Webdev;Student;Scout" alt="Webdev, student, scout..." /></a>
+     <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=700&size=20&letterSpacing=&duration=2000&pause=700&color=B6D9FD&center=true&vCenter=true&width=435&lines=Webdev;Student;Scout" alt="Webdev, student, scout..." />
     </summary>
   </ul>
 </div>
@@ -37,4 +37,4 @@
     </summary>
   </ul>
 </div>
-<p>gslgůlsldgůlsdůgds</p>
+<p>TODO: HTML & CSS, PHP, Go, Docker, Ubuntu bla bla bla</p>
