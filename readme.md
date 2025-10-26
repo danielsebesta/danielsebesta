@@ -27,14 +27,3 @@
     <img src="https://raw.githubusercontent.com/danielsebesta/danielsebesta/refs/heads/main/icon_twitter.webp?a" alt="Twitter" width="32" style="margin: 0 10px;"/></a>
 
 </div>
-
-<hr>
-
-<div id="toc">
-  <ul style="list-style: none">
-    <summary>
-      <h2> Tools and Languages I use almost every day </h2>
-    </summary>
-  </ul>
-</div>
-<p>TODO: HTML & CSS, PHP, Go, Docker, Ubuntu bla bla bla</p>
